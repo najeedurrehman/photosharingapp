@@ -1,6 +1,11 @@
 import app from "../app.mjs";
+import dotenv from "dotenv";
 
-const server = app.listen(process.env.PORT || 3000, () => {
+dotenv.config();
+
+
+const server = app.listen(process.env.PORT || 3000, ()=>{
   const { port } = server.address();
-  console.log(`SERVER LISTENING ON PORT ${port}`);
-});
+  console.log(`SERVER IS LISTENING ON ${port}`);
+})
+
