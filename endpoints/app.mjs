@@ -3,7 +3,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-//import errorHandlerMiddleware from "./middlewares";
+
+import errorHandlerMiddleware from "./middlewares/errorHandlerMiddleware.mjs";
 
 import routing from "./router/router.mjs";
 
@@ -17,6 +18,6 @@ app.use(cookieParser());
 /* ROUTING IMPLEMENTS */
 
 app.use("/api/role", ROLE);
-//app.use(errorHandlerMiddleware);
+app.use(errorHandlerMiddleware);
 
 export default app;
